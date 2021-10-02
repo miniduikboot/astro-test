@@ -1,0 +1,22 @@
+---
+import fs from 'node:fs/promises';
+
+const { rootPath } = Astro.props;
+//const data = Astro.fetchContent('$/pages/docs/**/*.md')
+//const data = await fs.readdir(rootPath);
+/*const data = import.meta.glob('$/pages/docs/*.md')
+let data2 = []
+for (const path in data) {
+    console.log(path);
+    data[path]().then((mod) => {
+    console.log("whatever");
+        console.log(mod);
+        //data2 += JSON.stringify(mod);
+    });
+}*/
+//console.log(page.astro);
+let data2 = Astro.fetchContent("$/pages/docs/*.md")[0].astro
+---
+<p>
+{ data2 }
+</p>
